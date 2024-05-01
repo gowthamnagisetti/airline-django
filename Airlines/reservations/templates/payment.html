@@ -1,0 +1,61 @@
+<!-- templates/flights/payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .flight-details {
+            margin-bottom: 20px;
+        }
+        .action {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Payment for Flight ID: {{ flight.id }}</h1>
+    <div class="container">
+        <div class="flight-details">
+            <h2>Flight Details:</h2>
+            <p>Flight Number: {{ flight.flight_number }}</p>
+            <p>Departure: {{ flight.departure }}</p>
+            <p>Arrival: {{ flight.arrival }}</p>
+            <p>Price: ${{ flight.price }}</p>
+        </div>
+
+        <div class="action">
+            <!-- Button to confirm payment (could lead to a payment processing view) -->
+            <a href="/confirm/">Confirm Payment</a>
+        </div>
+    </div>
+</body>
+</html>
